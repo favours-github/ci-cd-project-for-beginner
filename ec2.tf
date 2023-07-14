@@ -1,17 +1,15 @@
 # configured aws provider with proper credentials
 provider "aws" {
-  region  = "us-east-1"
-  profile = "terraform-user"
+  region = "us-east-1"
 }
+
 
 
 # store the terraform state file in s3
 terraform {
   backend "s3" {
-    bucket  = "aosnote-terraform-state-bucket"
-    key     = "build/terraform.tfstate"
+    bucket  = "dev-ox1-bucket"
     region  = "us-east-1"
-    profile = "terraform-user"
   }
 }
 
